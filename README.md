@@ -1,4 +1,4 @@
-mick_bartholomew_portfolio
+bartholomew
 ==========================
 
 One-page Web App, Portfolio Site, WordPress Theme
