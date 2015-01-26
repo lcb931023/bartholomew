@@ -28,11 +28,9 @@ module.exports = {
     // A separate bundle will be generated for each
     // bundle config in the list below
     bundleConfigs: [{
-      entries: src + '/javascript/global.coffee',
+      entries: src + '/javascript/global.js',
       dest: dest,
       outputName: 'global.js',
-      // Additional file extentions to make optional
-      extensions: ['.coffee', '.hbs'],
       // list of modules to make require-able externally
       require: ['jquery', 'underscore']
     }, {
