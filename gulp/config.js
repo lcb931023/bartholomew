@@ -28,17 +28,9 @@ module.exports = {
     // A separate bundle will be generated for each
     // bundle config in the list below
     bundleConfigs: [{
-      entries: src + '/javascript/global.js',
+      entries: src + '/javascript/app.js',
       dest: dest,
-      outputName: 'global.js',
-      // list of modules to make require-able externally
-      require: ['jquery', 'underscore']
-    }, {
-      entries: src + '/javascript/page.js',
-      dest: dest,
-      outputName: 'page.js',
-      // list of externally available modules to exclude from the bundle
-      external: ['jquery', 'underscore']
+      outputName: 'app.js'
     }]
   },
   production: {
