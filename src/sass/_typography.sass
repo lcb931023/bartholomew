@@ -1,4 +1,17 @@
+@import url("//hello.myfonts.net/count/2d2acf")
+@font-face
+  font-family: 'Code-Pro-Demo'
+  src: url('webfonts/2D2ACF_0_0.eot')
+  src: url('webfonts/2D2ACF_0_0.eot?#iefix') format("embedded-opentype"), url('webfonts/2D2ACF_0_0.woff2') format("woff2"), url('webfonts/2D2ACF_0_0.woff') format("woff"), url('webfonts/2D2ACF_0_0.ttf') format("truetype")
+@import url(http://fonts.googleapis.com/css?family=Nunito:400,300)
+
+$code-pro: 'Code-Pro-Demo', 'Century Gothic', CenturyGothic, AppleGothic, 'Arial', sans-serif
+$avenir: 'Avenir', 'Nunito', sans-serif
+
 body
   +font-smoothing // <- _mixins.scss
   color: #555
-  font-family: sans-serif
+  font-family: $avenir
+
+h1
+  font-family: $code-pro

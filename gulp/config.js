@@ -24,13 +24,18 @@ module.exports = {
     src: src + "/htdocs/**",
     dest: dest
   },
+  webfonts: {
+    src: src + "/webfonts/**",
+    dest: dest + "/webfonts"
+  },
   browserify: {
     // A separate bundle will be generated for each
     // bundle config in the list below
     bundleConfigs: [{
       entries: src + '/javascript/app.js',
       dest: dest,
-      outputName: 'app.js'
+      outputName: 'app.js',
+      extensions: ['.hbs']
     }]
   },
   production: {
