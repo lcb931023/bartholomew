@@ -450,7 +450,7 @@
 
         //detecting any change on the URL to scroll to the given anchor link
         //(a way to detect back history button as we play with the hashes on the URL)
-        $(window).on('hashchange', hashChangeHandler);
+        //$(window).on('hashchange', hashChangeHandler); // [CUSTOM] commented out because we have our own hash manipulation
 
         /**
         * Actions to do when the hash (#) in the URL changes.
