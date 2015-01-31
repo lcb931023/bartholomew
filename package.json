@@ -8,7 +8,7 @@
   },
   "browser": {
     "underscore": "backbone/node_modules/underscore",
-    "plugin": "./src/javascript/vendor/jquery-plugin.js"
+    "pagepiling": "./src/javascript/vendor/jquery.pagepiling.js"
   },
   "browserify": {
     "transform": [
@@ -17,8 +17,8 @@
     ]
   },
   "browserify-shim": {
-    "plugin": {
-      "exports": "plugin",
+    "pagepiling": {
+      "exports": "pagepiling",
       "depends": [
         "jquery:$"
       ]
