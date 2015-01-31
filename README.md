@@ -8,6 +8,10 @@ One-page Web App, Portfolio Site, WordPress Theme
 ```
 npm install
 gulp
+```
+
+For final optimized product:
+```
 gulp production
 ```
 
