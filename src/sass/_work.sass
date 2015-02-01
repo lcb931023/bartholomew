@@ -1,3 +1,4 @@
+/* All section General styling */
 .section
   height: 100%
   overflow: hidden
@@ -5,7 +6,11 @@
     position: relative
     width: 100%
     height: 100%
+    .button
+      font-weight: 400
+      color: #969696
 
+/* Landing Section */
 .section.welcome
   background-color: #282828
   .title
@@ -16,32 +21,126 @@
     text-align: center
     color: #f0f0f0
 
+
+/* Work sections */
 .section.s1
   background-color: #f4f8f9
-  .title
-    color: #cccbca
+  .work-splash
+    width: 350px
+    height: auto
+    position: absolute
+    top: 30%
+    left: 22%
+  .info
+    position: absolute
+    top: 45%
+    left: 60%
+    .title
+      color: #cccbca
+    .subtitle
+      color: #979797
 
 .section.s2
   background-color: #eae1e0
-  .title
-    color: #c3c2c1
+  .work-splash
+    width: 350px
+    height: auto
+    position: absolute
+    top: 30%
+    left: 22%
+  .info
+    position: absolute
+    top: 45%
+    left: 60%
+    .title
+      color: #c3c2c1
+    .subtitle
+      color: #a9a9a9
 
 .section.s3
   background-color: #212121
-  .title
-    color: #424241
+  .work-splash
+    width: 350px
+    height: auto
+    position: absolute
+    top: 30%
+    left: 22%
+  .info
+    position: absolute
+    top: 45%
+    left: 60%
+    .title
+      color: #424241
+    .subtitle
+      color: #696967
+
 
 .section.s4
   background-color: #fbfaf8
-  .title
-    color: #cccbca
-
-.section.last
-  background-color: #282828
-  .title
+  .work-splash
+    width: 350px
+    height: auto
+    position: absolute
+    top: 30%
+    left: 22%
+  .info
     position: absolute
     top: 45%
+    left: 60%
+    .title
+      color: #cccbca
+    .subtitle
+      color: #979797
+
+
+
+/* Last Section: Thumbnail Navigation */
+.section.last
+  background-color: #282828
+  .thumbnails-nav
+    position: absolute
+    top: 17%
     left: 50%
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -0%)
     text-align: center
+  .title
     color: #f0f0f0
+    margin-bottom: 0.5em
+  .subtitle
+    color: #979797
+    margin-bottom: 4em
+  .thumbnails-all
+    width: 100%
+    color: #979797
+    .tag
+      width: 100%
+      font-weight: 400
+    .fancy
+      overflow-x: hidden
+      span
+        display: inline-block
+        position: relative
+        &:before, &:after
+          content:""
+          position: absolute
+          height: 1px
+          top: 4px
+          border-bottom: 1px solid currentcolor
+          width: 500%
+        &:before
+          right: 100%
+          margin-right: 5px
+        &:after
+          left:100%
+          margin-left: 5px
+    .thumbnails-group
+      margin-bottom: 1em
+      width: 382px
+      img
+        display: inline-block
+        width: 88px
+        height: 72px
+        margin: 2px
+
+
+// [TODO] media query, e.g. for thumbnails-group

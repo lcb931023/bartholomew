@@ -11,7 +11,7 @@ module.exports = Backbone.View.extend({
     this.$el.html(this.template());
     // Get Tooltip Names
     var arrTooltip = [];
-    _.each(this.$(".section > .title"), function getHTML (element) {
+    _.each(this.$(".section .title"), function getHTML (element) {
       arrTooltip.push($(element).html());
     });
     // Start PagePiling
