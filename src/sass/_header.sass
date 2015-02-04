@@ -1,12 +1,27 @@
 .header-wrapper
   position: relative
   margin-top: 3em
+  transition: all 0.5s ease
+  color: #e9e9e9
+  // Dynamic Colors Stylin'
+  &.s1
+    color: #e9e9e9
+  &.s2
+    color: #464646
+  &.s3
+    color: #464646
+  &.s4
+    color: #e9e9e9
+  &.s5
+    color: #464646
+  &.s6
+    color: #e9e9e9
+
 
 .icon-logo
   position: absolute
   left: 5rem
   font-size: 1em
-  color: #f2f2f2
   &:after
     content: ''
     position: absolute
@@ -16,7 +31,7 @@
     bottom: -0.2em
     width: 100%
     height: 1px
-    background-color: #e0e0e0
+    background-color: currentcolor
 
 nav
   position: absolute
@@ -34,4 +49,4 @@ nav
       display: inline
       margin-left: 4em
       a:link, a:hover, a:visited, a:active
-        color: #e9e9e9
+        color: currentcolor
