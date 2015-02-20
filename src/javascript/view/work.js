@@ -10,18 +10,18 @@ module.exports = Backbone.View.extend({
     // When you need to trigger(publish) some events within here
     this.EVI = options.EVI;
     // To ensure correct execution in pagePiling
-    _.bindAll(this, "changeWorkSlide");
+    _.bindAll(this, 'changeWorkSlide');
     return this.render();
   },
   render: function() {
     this.$el.html(this.template());
     // Get Tooltip Names
     var arrTooltip = [];
-    _.each(this.$(".section .title"), function getHTML (element) {
+    _.each(this.$('.section .title'), function getHTML (element) {
       arrTooltip.push($(element).html());
     });
     // Start PagePiling
-    this.$("#pagepiling").pagepiling({
+    this.$('#pagepiling').pagepiling({
       verticalCentered:false,
       navigation: {
         'textColor': '#000',
@@ -35,8 +35,8 @@ module.exports = Backbone.View.extend({
     return this;
   },
   // Event Trigger
-  changeWorkSlide: function(index, nextIndex, direction){
-    this.EVI.trigger("changeWorkSlide", {
+  changeWorkSlide: function(index, nextIndex, direction) {
+    this.EVI.trigger('changeWorkSlide', {
       index: index,
       nextIndex: nextIndex,
       direction: direction

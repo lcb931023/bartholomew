@@ -8,9 +8,9 @@ module.exports = Backbone.View.extend({
 
     /*** Event Subscribing & Handling ***/
     // Make sure event handlers execute in the right context
-    _.bindAll(this, "changeWorkSlideHandler");
+    _.bindAll(this, 'changeWorkSlideHandler');
     // When you need to subscribe to some events
-    options.EVI.bind("changeWorkSlide", this.changeWorkSlideHandler);
+    options.EVI.bind('changeWorkSlide', this.changeWorkSlideHandler);
 
     return this.render();
   },
@@ -20,9 +20,9 @@ module.exports = Backbone.View.extend({
   },
 
   // Event handler
-  changeWorkSlideHandler: function(pData){
-    var indexClass = "s"+pData.index;
-    var nextIndexClass = "s"+pData.nextIndex;
-    this.$el.removeClass( indexClass ).addClass( nextIndexClass );
+  changeWorkSlideHandler: function(pData) {
+    var indexClass = 's' + pData.index;
+    var nextIndexClass = 's' + pData.nextIndex;
+    this.$el.removeClass(indexClass).addClass(nextIndexClass);
   }
 });
