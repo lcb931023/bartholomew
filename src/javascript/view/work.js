@@ -1,16 +1,20 @@
 var _ = require('underscore');
 var Backbone = require('backbone');
 Backbone.$ = require('jquery');
+var DetailView  = require('./detail');
+var DetailViewFactory = require('./DetailViewFactory');
 
 module.exports = Backbone.View.extend({
+
+  detailView: {},
+
   template: require('../template/work'),
   initialize: function(options) {
-
-    /*** Event Publishing ***/
-    // When you need to trigger(publish) some events within here
     this.EVI = options.EVI;
+    /*** Event Publishing ***/
     // To ensure correct execution in pagePiling
     _.bindAll(this, 'changeWorkSlide');
+
     return this.render();
   },
   render: function() {
@@ -34,6 +38,11 @@ module.exports = Backbone.View.extend({
 
     return this;
   },
+  // in-view events
+  events: {
+    //'click .button.details': 'gotoDetails' // [OBSOLETE]
+  },
+
   // Event Trigger
   changeWorkSlide: function(index, nextIndex, direction) {
     this.EVI.trigger('changeWorkSlide', {
@@ -41,6 +50,48 @@ module.exports = Backbone.View.extend({
       nextIndex: nextIndex,
       direction: direction
     });
-  }
+  },
+
+  /**
+   * Create detailView and transit to it
+   */
+  enterDetail: function (pType) {
+    this.detailView = DetailViewFactory.create({
+      type: pType,
+      el: '#detail',
+      EVI: this.EVI
+    });
+    this.transitOut();
+    this.detailView.transitIn();
+  },
+
+  /**
+   * if detailView exists, delete and transit back to work
+   */
+  leaveDetail: function () {
+    // if detailView doesn't exist, it'll be undefined
+    // if it does exist but is out, it'll be false
+    if ( this.detailView.isPresent ) {
+      this.detailView.transitOut();
+      this.transitIn();
+    }
+  },
+
+  transitOut: function() {
+    console.log('Work Out');
+    // also transit out pagepiling's Tooltip
+    this.$el.addClass('out');
+    if ( this.$('#pagepiling').pagepiling ) {
+      $('#pp-nav').addClass('out');
+    }
+  },
+
+  transitIn: function () {
+    console.log('Walk In');
+    this.$el.removeClass('out');
+    if ( this.$('#pagepiling').pagepiling ) {
+      $('#pp-nav').removeClass('out');
+    }
+  },
 
 });

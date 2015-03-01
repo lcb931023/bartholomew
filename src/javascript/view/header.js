@@ -5,12 +5,12 @@ Backbone.$ = require('jquery');
 module.exports = Backbone.View.extend({
   template: require('../template/header'),
   initialize: function(options) {
-
+    this.EVI = options.EVI;
     /*** Event Subscribing & Handling ***/
     // Make sure event handlers execute in the right context
     _.bindAll(this, 'changeWorkSlideHandler');
     // When you need to subscribe to some events
-    options.EVI.bind('changeWorkSlide', this.changeWorkSlideHandler);
+    this.EVI.bind('changeWorkSlide', this.changeWorkSlideHandler);
 
     return this.render();
   },
