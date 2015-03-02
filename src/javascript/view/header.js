@@ -21,8 +21,24 @@ module.exports = Backbone.View.extend({
 
   // Event handler
   changeWorkSlideHandler: function(pData) {
-    var indexClass = 's' + pData.index;
-    var nextIndexClass = 's' + pData.nextIndex;
-    this.$el.removeClass(indexClass).addClass(nextIndexClass);
+    var lastSliderClass = this.getSliderClass();
+    var nextSliderClass = 's' + pData.nextIndex;
+    // remove all classes with 's'
+    this.$el.removeClass(lastSliderClass).addClass(nextSliderClass);
+  },
+
+  // helper
+  // get class with prefix 's'
+  getSliderClass: function (){
+    console.log(this);
+    var classes = this.$el.attr('class').split(' ');
+    for (var i = 0; i < classes.length; i++) {
+      var matches = /^s(.+)/.exec(classes[i]);
+      console.log(matches);
+      if (matches != null) {
+        return matches[0];
+        break;
+      }
+    }
   }
 });

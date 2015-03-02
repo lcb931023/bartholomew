@@ -46,11 +46,11 @@ module.exports = Backbone.View.extend({
   },
 
   // Event Trigger
+  // HACK: This function's parameters are structured this way to
+  // get data from pagepiling's onLeave.
   changeWorkSlide: function(index, nextIndex, direction) {
     this.EVI.trigger('changeWorkSlide', {
-      index: index,
       nextIndex: nextIndex,
-      direction: direction
     });
   },
 
@@ -76,6 +76,8 @@ module.exports = Backbone.View.extend({
     if ( this.detailView.isPresent ) {
       this.detailView.transitOut();
       this.render();
+      // TODO: Get detailView's slider index and go to that one
+      this.changeWorkSlide(null, 1, null);
       this.transitIn();
     }
   },
