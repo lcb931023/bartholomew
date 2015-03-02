@@ -27,6 +27,8 @@ module.exports = Backbone.View.extend({
     // Start PagePiling
     this.$('#pagepiling').pagepiling({
       verticalCentered:false,
+      // TODO: Fix pagepiling's multiple event handling bug
+      keyboardScrolling: false,
       navigation: {
         'textColor': '#000',
         'bulletsColor': '#000',
@@ -73,6 +75,7 @@ module.exports = Backbone.View.extend({
     // if it does exist but is out, it'll be false
     if ( this.detailView.isPresent ) {
       this.detailView.transitOut();
+      this.render();
       this.transitIn();
     }
   },
@@ -84,6 +87,11 @@ module.exports = Backbone.View.extend({
     if ( this.$('#pagepiling').pagepiling ) {
       $('#pp-nav').addClass('out');
     }
+    // remove after out
+    function outCallback() {
+      $(this).empty();
+    }
+    this.$el.one('transitionend', outCallback);
   },
 
   transitIn: function () {
