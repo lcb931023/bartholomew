@@ -11,22 +11,57 @@ $bold: 700
 $regular: 400
 $light: 300
 
-body
+html
   +font-smoothing // <- _mixins.scss
-  color: $darker-grey
+  font-size: 62.5% // using rem for ALL TEH THINGS
+  color: $dark-grey
   font-family: $avenir
+
+/* wob: white-on-black
+ * bow: black-on-white
+ * Achieve these values by having parent div have class,
+ * or by having them attached to you. english. lkasdhfi
+ */
 
 h1
   font-family: $code-pro
-  font-size: 17pt
+  font-size: 3.6rem
   font-weight: 400
   letter-spacing: .2em
   text-transform: uppercase
+  &.wob
+    color: $light-grey
+  &.bow
+    color: $dark-grey
+
 h3
-  font-size: 7pt
+  font-size: 1.6rem
   font-weight: 500
   text-transform: uppercase
   letter-spacing: .1em
+  &.wob
+    color: $light-grey
+  &.bow
+    color: $dark-grey
+
+p
+  font-size: 1.6rem
+  &.wob
+    color: $grey
+  &.bow
+    color: $grey
+
+.wob
+  h1, h3
+    color: $light-grey
+  p
+    color: $grey
+
+.bow
+  h1, h3
+    color: $dark-grey
+  p
+    color: $grey
 
 a
   text-decoration: none
