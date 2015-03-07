@@ -1,7 +1,66 @@
-// LET IT SCROLL
 #detail
   height: 100%
-  overflow: scroll
+  width: 100%
+  overflow: scroll // LET IT SCROLL
+  // Opening screen
+  .opening
+    position: relative
+    height: 650px
+    &.bow
+      background-color: $white
+    &.wob
+      background-color: $black
+    article
+      position: absolute
+      width: 265px
+      left: 60px
+      top: 110px
+    figure
+      position: absolute
+      right: 60px
+      top: 280px
+      img
+        width: 384px
+
+  .objective
+    background: url("images/goggles-objective-bg.png")
+    height: 180px
+    padding: 0 50px
+    display: flex
+    align-items: center
+    justify-content: center
+    p
+      max-width: 650px
+      +mq(desktop)
+        max-width: 750px
+      text-align: center
+      color: $light-grey
+
+  .github-model
+    background: $white
+    display: flex
+    height: 100%
+    min-height: 500px
+    align-items: center
+    justify-content: center
+    .wrapper
+      position: relative
+      height: 80%
+      width: 80%
+      .iframe-shade
+        background-color: rgba(0, 0, 0, 0.06)
+        position: absolute
+        z-index: 2
+        height: 100%
+        width: 100%
+      iframe
+        position: absolute
+        z-index: 1
+        height: 100%
+        width: 100%
+
+.js-render-bar
+  display: none !important
 
 .footer
   color: $grey
