@@ -1,4 +1,45 @@
+/* thanks to github.com/aztec8 for many of these mixins */
 @mixin font-smoothing {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+// media queries
+@mixin mq($breakpoint)
+{
+  @if $breakpoint == mobile
+  {
+    @media only screen and (min-width: 328px){
+      @content;
+    }
+  }
+  @else if $breakpoint == tabletPortrait
+  {
+    @media only screen and (min-width: 760px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == tabletLandscape
+  {
+    @media only screen and (min-width: 1016px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == desktop
+  {
+    @media only screen and (min-width: 1400px) {
+      @content;
+    }
+  }
+}
+
+// clearfix
+@mixin cf()
+{
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {clear: both;}
 }
