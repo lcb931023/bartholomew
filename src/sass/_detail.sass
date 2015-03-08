@@ -64,6 +64,7 @@
     background: $black
     color: $light-grey
     text-transform: uppercase
+    font-weight: 500
     padding-top: 1rem
     ul
       text-align: justify
@@ -145,6 +146,58 @@
             width: 50%
           +mq(desktop)
             width: 35%
+
+  .functional
+    display: flex
+    justify-content: center
+    width: 100%
+    height: 332px
+    +mq(tabletLandscape)
+      height: 360px
+    +mq(desktop)
+      height: 406px
+    &.bow
+      background-color: $white
+    &.wob
+      background-color: $black
+    .wrapper
+      flex: 1
+      position: relative
+      height: 100%
+      max-width: 1400px
+      margin: 0 48px
+      +mq(tabletLandscape)
+        margin: 0 80px
+      +mq(desktop)
+        margin: 0 128px
+      article
+        position: absolute
+        width: 294px
+        right: 32px
+        top: 40px
+        +mq(tabletLandscape)
+          width: 350px
+          right: 19 * 8px
+          top: 105px
+        +mq(desktop)
+          width: 395px
+          right: 48px
+          top: 160px
+      figure
+        position: absolute
+        background-size: contain
+        background-image: url(images/goggles-functional-portrait.png)
+        background-repeat: no-repeat
+        background-position:  left bottom
+        bottom: 0
+        height: calc(100% - 8px * 10)
+        +mq(tabletLandscape)
+          height: calc(100% - 8px * 8)
+          background-image: url(images/goggles-functional-landscape.png)
+        +mq(desktop)
+          height: calc(100% - 8px * 9)
+          background-image: url(images/goggles-functional-desktop.png)
+        width: 100%
 
 .footer
   color: $grey
