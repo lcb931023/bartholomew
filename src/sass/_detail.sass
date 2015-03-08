@@ -22,7 +22,7 @@
       img
         width: 384px
 
-  .objective
+  .objective-banner
     background: url("images/goggles-objective-bg.png")
     height: 180px
     padding: 0 50px
@@ -47,21 +47,104 @@
       position: relative
       height: 80%
       width: 80%
+      max-width: 1400px
+      .iframe-shade, iframe
+        position: absolute
+        height: 100%
+        width: 100%
       .iframe-shade
         pointer-events: none // click-through
         background-color: rgba(0, 0, 0, 0.06)
-        position: absolute
         z-index: 2
-        height: 100%
-        width: 100%
       iframe
+        z-index: 1
+
+  // spacing from http://jsfiddle.net/danield770/9hh86/
+  .process-banner
+    background: $black
+    color: $light-grey
+    text-transform: uppercase
+    padding-top: 1rem
+    ul
+      text-align: justify
+      list-style-type: none
+      margin: 0 auto
+      height: 5.5rem
+      max-width: 664px
+      +mq(tabletPortrait)
+        max-width: 664px
+      +mq(tabletLandscape)
+        max-width: 856px
+      +mq(desktop)
+        max-width: 1144px
+      &:after
+        content: ''
+        display: inline-block
+        width: 100%
+      li
+        display: inline-block
+        .flexbox
+          display: flex
+          .left
+            font-size: 3.6rem
+          .right
+            width: 90px
+            line-height: 15px
+            margin-top: 9px
+            margin-left: 5px
+            font-size: 1.4rem
+            text-align: start
+
+  // Black magic below from
+  // http://www.mademyday.de/css-height-equals-width-with-pure-css.html
+  .research
+    background-color: $black
+    display: flex
+    justify-content: center
+    .wrapper
+      max-width: 1400px
+      position: relative
+      width: 100%
+      &:before
+        content: ""
+        display: block
+        padding-top: percentage(1450/1520)
+        +mq(tabletLandscape)
+          padding-top: percentage(1330/2032)
+        +mq(desktop)
+          padding-top: percentage(1260/2800)
+      .bg
         position: absolute
         z-index: 1
-        height: 100%
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        background-size: cover
+        background-image: url(images/goggles-research-portrait.png)
+        +mq(tabletLandscape)
+          background-image: url(images/goggles-research-landscape.png)
+        +mq(desktop)
+          background-image: url(images/goggles-research-desktop.png)
+      .text-wrapper
+        position: absolute
+        z-index: 2
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
         width: 100%
-
-.js-render-bar
-  display: none !important
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        article
+          text-align: center
+          width: 70%
+          +mq(tabletLandscape)
+            width: 50%
+          +mq(desktop)
+            width: 35%
 
 .footer
   color: $grey

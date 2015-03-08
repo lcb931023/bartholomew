@@ -16,18 +16,24 @@
   @else if $breakpoint == tabletPortrait
   {
     @media only screen and (min-width: 760px) {
+      // margin = 48 + 48
+      // width - margin = 664
       @content;
     }
   }
   @else if $breakpoint == tabletLandscape
   {
     @media only screen and (min-width: 1016px) {
+      // margin = 80 + 80
+      // width - margin = 856
       @content;
     }
   }
   @else if $breakpoint == desktop
   {
     @media only screen and (min-width: 1400px) {
+      // margin = 128 + 128
+      // width - margin = 1144px
       @content;
     }
   }
