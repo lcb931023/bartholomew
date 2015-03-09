@@ -199,10 +199,14 @@
           background-image: url(images/goggles-functional-desktop.png)
         width: 100%
 
-  .visualization, .framework, .setback
+  .visualization, .framework, .setback, .cad-process
     width: 100%
     display: flex
     justify-content: center
+    &.bow
+      background-color: $white
+    &.wob
+      background-color: $black
     .wrapper
       margin-left: 48px
       margin-right: 48px
@@ -214,31 +218,56 @@
         margin-right: 128px
       margin-top: 128px
       text-align: center
-      figure, img
-        width: 100%
-        display: flex
-        justify-content: center
-        img
-          width: 100%
-          height: 100%
-          max-width: 352px
       p
         font-weight: 400
         text-align: left
         margin-left: 60px
         margin-right: 60px
 
-  .new-direction
+  .visualization, .framework, .setback
+    figure, img
+      width: 100%
+      display: flex
+      justify-content: center
+      img
+        height: 100%
+        max-width: 352px
+
+  .fuck-this-slanted-shit
+    width: 100%
+    overflow: hidden
     &.wob
       color: $white
-      background-color: $black
+      .slanter
+        background-color: $black
     .slanter
       margin: 0 -100px
-      transform: rotate(5deg)
+      margin-top: 200px
+      transform: rotate(-5deg)
       transform-origin: left center
       text-align: center
       .wrapper
-        // [TODO] http://tympanus.net/Tutorials/SlopyElements/
+        transform: rotate(5deg)
+        .sections
+          padding-bottom: 120px
+        figure, img
+          width: 100%
+          display: flex
+          justify-content: center
+          img
+            height: 100%
+            // TODO mq this
+            max-width: 352px
+        p
+          font-weight: 400
+          text-align: left
+          // different because transform rotate messes it
+          margin-left: 200px
+          margin-right: 200px
+
+        .new-direction
+          img
+            margin-top: -100px
 
 .footer
   color: $grey
