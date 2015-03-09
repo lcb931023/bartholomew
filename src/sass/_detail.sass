@@ -199,7 +199,7 @@
           background-image: url(images/goggles-functional-desktop.png)
         width: 100%
 
-  .visualization, .framework, .setback, .cad-process
+  .visualization, .framework, .setback, .cad-process, .exploded, .more-work
     width: 100%
     display: flex
     justify-content: center
@@ -223,7 +223,7 @@
         margin-left: 60px
         margin-right: 60px
 
-  .visualization, .framework, .setback
+  .visualization, .framework, .setback, .exploded
     .wrapper
       margin-top: 128px
     figure, img
@@ -232,6 +232,10 @@
       justify-content: center
       img
         height: 100%
+
+  .visualization, .framework, .setback
+    figure
+      img
         max-width: 352px
 
   .fuck-this-slanted-shit
@@ -297,6 +301,33 @@
           height: auto
     p
       max-width: 650px
+
+  .exploded
+    .wrapper
+      margin-top: 64px !important // <buzzer>
+    img
+      margin-left: 60px
+      margin-right: 60px
+
+  .more-work
+    &.bow
+      background-color: $white
+    .wrapper
+      margin-top: 64px
+      width: 100%
+      h1
+        font-size: 3.2rem
+        +mq(tabletLandscape)
+          font-size: 3.0rem
+        &:before
+          content: ''
+          display: block
+          overflow: hidden
+          margin: .1em auto
+          margin-bottom: 2rem
+          width: 100%
+          height: 2px
+          background-color: currentcolor
 
 .footer
   color: $grey
