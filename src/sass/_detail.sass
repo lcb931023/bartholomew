@@ -216,7 +216,6 @@
       +mq(desktop)
         margin-left: 128px
         margin-right: 128px
-      margin-top: 128px
       text-align: center
       p
         font-weight: 400
@@ -225,6 +224,8 @@
         margin-right: 60px
 
   .visualization, .framework, .setback
+    .wrapper
+      margin-top: 128px
     figure, img
       width: 100%
       display: flex
@@ -268,6 +269,34 @@
         .new-direction
           img
             margin-top: -100px
+
+  .cad-process
+    .wrapper
+      margin-top: 32px
+    figure
+      position: relative
+      width: 70vw
+      height: 50vw
+      margin: 0 auto
+      margin-bottom: 24px
+      .frame
+        position: absolute
+        width: 100%
+        display: flex
+      .content
+        position: absolute
+        width: 92%
+        height: 73%
+        margin-top: 4%
+        margin-left: 4%
+        overflow: hidden
+        overflow-y: scroll
+        box-sizing: border-box
+        img
+          width: 100%
+          height: auto
+    p
+      max-width: 650px
 
 .footer
   color: $grey
