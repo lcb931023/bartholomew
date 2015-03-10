@@ -1,112 +1,122 @@
 /* All section General styling */
+/* For the work page, absolute positioning is King */
 .section
   height: 100%
   overflow: hidden
+  &.wob
+    background-color: $black
+  &.bow
+    background-color: $white
   .wrapper
     position: relative
     width: 100%
     height: 100%
+    img.work-splash, article
+      position: absolute
+    img.work-splash
+      width: 400px
+      height: auto
+      top: 40%
+      left: 50%
+      transform: translate(-50%, -50%)
+    article
+      width: 100%
+      text-align: center
+      +mq(tabletLandscape)
+        width: 500px
+        text-align: left
+      top: 70%
+      left: 50%
+      transform: translate(-50%, -50%)
+      h1
+        font-size: 4.8rem
+        margin-bottom: 1rem
+      h3
+        font-size: 1.6rem
+        color: $grey
     .button
-      font-weight: 400
-      color: $light-grey
+      font-weight: 200
+      color: $grey
       &:hover
         cursor:pointer
 
 /* Landing Section */
 .section.welcome
-  background-color: $black
-  .title
-    position: absolute
+  article
     top: 45%
     left: 50%
     transform: translate(-50%, -50%)
     text-align: center
+    h1
+      font-size: 3.6rem
 
 /* Work sections */
 .section.s2
   background-color: #fafafa
-  .work-splash
-    width: 350px
-    height: auto
-    position: absolute
-    top: 30%
-    left: 22%
-  .info
-    position: absolute
-    top: 45%
-    left: 60%
 
 .section.s3
   background-color: #f5f5f5
-  .work-splash
-    width: 350px
-    height: auto
-    position: absolute
-    top: 30%
-    left: 22%
-  .info
-    position: absolute
-    top: 45%
-    left: 60%
+  img.work-splash
+    width: 800px
+    left: 45%
 
 .section.s4
   background-color: #f0f0f0
-  .work-splash
-    width: 350px
-    height: auto
-    position: absolute
-    top: 30%
-    left: 22%
-  .info
-    position: absolute
-    top: 45%
-    left: 60%
+  img.work-splash
+    width: 376px
 
 /* Last Section: Thumbnail Navigation */
 .section.last
-  background-color: $black
-  .thumbnails-nav
-    position: absolute
-    top: 17%
-    left: 50%
-    transform: translate(-50%, -0%)
-    text-align: center
-  .title
-    margin-bottom: 0.5em
-  .subtitle
-    margin-bottom: 4em
-  .thumbnails-all
-    width: 100%
-    color: #979797
-    .tag
-      width: 100%
-      font-weight: 400
-    .fancy
-      overflow-x: hidden
-      span
-        display: inline-block
-        position: relative
-        &:before, &:after
-          content:""
-          position: absolute
-          height: 1px
-          top: 4px
-          border-bottom: 1px solid currentcolor
-          width: 500%
-        &:before
-          right: 100%
-          margin-right: 5px
-        &:after
-          left:100%
-          margin-left: 5px
-    .thumbnails-group
-      margin-bottom: 1em
-      width: 382px
-      img
-        display: inline-block
-        width: 88px
-        height: 72px
-        margin: 2px
-
+  color: $light-grey
+  .wrapper
+    margin: 0 48px
+    margin-top: 150px
+    width: initial
+    .output-wrapper
+      margin: 0 auto
+      width: 80%
+      height: 100%
+      overflow-y: scroll
+      h1
+        font-size: 3.6rem
+        margin-bottom: 40px
+      .other-works
+        width: 100%
+        figure
+          box-sizing: border-box
+          float: left
+          padding: 0 3px
+          margin-bottom: 16px
+          max-width: 215px
+          width: 33.3%
+          +mq(tabletLandscape)
+            width: 25%
+          +mq(desktop)
+            width: 20%
+          img
+            width: 100%
+            height: auto
+          figcaption
+            text-transform: uppercase
+            font-size: 1.6rem
+            letter-spacing: .1em
+          // $!çk ñå$†¥ płåçèhøłdè®
+          .noshow-wrapper
+            background-color: $grey
+            display: flex
+            position: relative
+            justify-content: center
+            align-items: center
+            span
+              position: absolute
+              width: 100%
+              text-align: center
+              transform: translate(-50%, -50%)
+              top: 50%
+              left: 50%
+              color: #f0f0f0
+              font-size: 1.6rem
+            img
+              visibility: hidden
 
 // [TODO] media query, e.g. for thumbnails-group

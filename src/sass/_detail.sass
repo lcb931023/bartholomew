@@ -310,6 +310,8 @@
       margin-right: 60px
 
   .more-work
+    &.wob
+      background-color: $black
     &.bow
       background-color: $white
     .wrapper
@@ -317,6 +319,7 @@
       width: 100%
       h1
         font-size: 3.2rem
+        margin-bottom: 3rem
         +mq(tabletLandscape)
           font-size: 3.0rem
         &:before
@@ -328,6 +331,21 @@
           width: 100%
           height: 2px
           background-color: currentcolor
+      .other-works
+        display: flex
+        max-width: 850px
+        margin: 0 auto
+        figure
+          flex: 33.3%
+          margin: 0 3px
+          img
+            width: 100%
+            height: auto
+          figcaption
+            // do we want these?
+            display: none
+            text-align: left
+            text-transform: uppercase
 
 .footer
   color: $grey
