@@ -4,17 +4,19 @@ $easing: ease-in-out;
 
 .button {
   box-sizing: border-box;
+  text-align: center;
 }
 
 [data-wipe] {
-  display: inline-block;
-  padding: 0.8em 18px;
+  display: inline-block; // Fix cut-off
+  padding: 8px 18px;
   text-decoration: none;
   position: relative;
   border: 1px solid $light-grey;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-align: left;
+  color: $light-grey;
   overflow: hidden;
 
   &:before, &:after {
