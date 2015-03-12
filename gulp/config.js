@@ -13,6 +13,7 @@ module.exports = {
     dest: dest,
     settings: {
       indentedSyntax: true, // Enable .sass syntax!
+      errLogToConsole: true,
       imagePath: '/images' // Used by the image-url helper
     }
   },
