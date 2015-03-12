@@ -17,6 +17,21 @@ module.exports = {
       imagePath: '/images' // Used by the image-url helper
     }
   },
+  iconFonts: {
+    name: 'Custom Icon',
+    src: src + '/icons/*.svg',
+    dest: dest + '/fonts',
+    sassDest: src + '/sass',
+    template: './gulp/tasks/iconFont/template.sass.swig',
+    sassOutputName: '_icons.sass',
+    fontPath: 'fonts',
+    className: 'icon',
+    options: {
+      fontName: 'Post-Creator-Icons',
+      appendCodepoints: true,
+      normalize: false
+    }
+  },
   images: {
     src: src + "/images/**",
     dest: dest + "/images"
