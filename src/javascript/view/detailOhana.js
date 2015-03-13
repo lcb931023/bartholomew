@@ -6,7 +6,7 @@ var DetailView  = require('./detail');
 
 module.exports = DetailView.extend({
 
-  template: require('../template/detailHeadphone'),
+  template: require('../template/detailOhana'),
 
   initialize: function(options) {
     DetailView.prototype.initialize.apply(this, arguments);

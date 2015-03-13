@@ -5,6 +5,9 @@ $easing: ease-in-out;
 .button {
   box-sizing: border-box;
   text-align: center;
+  span {
+    color: $gold;
+  }
 }
 
 [data-wipe] {

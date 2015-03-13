@@ -7,9 +7,11 @@
 
 var DetailView = require('./detail');
 var DetailViewGoggle = require('./detailGoggle');
-var DetailViewVehicle = require('./detailVehicle');
 var DetailViewTAW = require('./detailTAW');
-var DetailViewHeadphone = require('./detailHeadphone');
+// Less detailed views
+var DetailViewOhana = require('./detailOhana');
+var DetailViewOnestep = require('./detailOnestep');
+var DetailViewStapler = require('./detailStapler');
 
 module.exports = {
   create: function (options) {
@@ -21,11 +23,14 @@ module.exports = {
       case 'taw':
         ViewType = DetailViewTAW;
         break;
-      case 'vehicle':
-        ViewType = DetailViewVehicle;
+      case 'ohana':
+        ViewType = DetailViewOhana;
         break;
-      case 'headphone':
-        ViewType = DetailViewHeadphone;
+      case 'onestep':
+        ViewType = DetailViewOnestep;
+        break;
+      case 'stapler':
+        ViewType = DetailViewStapler;
         break;
       default:
         ViewType = DetailView;
