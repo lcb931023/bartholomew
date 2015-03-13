@@ -6,7 +6,7 @@
  */
 
 var DetailView = require('./detail');
-var DetailViewGoggle = require('./detailGoggle');
+var DetailViewGoggles = require('./detailGoggles');
 var DetailViewTAW = require('./detailTAW');
 // Less detailed views
 var DetailViewOhana = require('./detailOhana');
@@ -17,8 +17,8 @@ module.exports = {
   create: function (options) {
     var ViewType = null;
     switch (options.type) {
-      case 'goggle':
-        ViewType = DetailViewGoggle;
+      case 'goggles':
+        ViewType = DetailViewGoggles;
         break;
       case 'taw':
         ViewType = DetailViewTAW;
