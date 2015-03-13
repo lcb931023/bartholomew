@@ -218,7 +218,7 @@
           background-image: url(images/goggles-functional-desktop.png)
         width: 100%
 
-  .visualization, .framework, .setback, .cad-process, .exploded, .more-work
+  .text-image-layout, .cad-process, .exploded, .more-work
     width: 100%
     display: flex
     justify-content: center
@@ -227,6 +227,8 @@
     &.wob
       background-color: $black
     .wrapper
+      width: 1400px
+      margin-top: 128px
       margin-left: 48px
       margin-right: 48px
       +mq(tabletLandscape)
@@ -236,13 +238,8 @@
         margin-left: 128px
         margin-right: 128px
       text-align: center
-      p
-        font-weight: 400
-        text-align: left
-        margin-left: 60px
-        margin-right: 60px
 
-  .visualization, .framework, .setback, .exploded
+  .exploded
     .wrapper
       margin-top: 128px
     figure, img
@@ -252,50 +249,113 @@
       img
         height: 100%
 
-  .visualization, .framework, .setback
-    figure
-      img
-        max-width: 352px
-
-  .fuck-this-slanted-shit
-    width: 100%
-    overflow: hidden
-    &.wob
-      color: $white
-      .slanter
-        background-color: $black
-    .slanter
-      margin: 0 -100px
-      margin-top: 200px
-      transform: rotate(-5deg)
-      transform-origin: left center
-      text-align: center
-      .wrapper
-        transform: rotate(5deg)
-        .sections
-          padding-bottom: 120px
-        figure, img
-          width: 100%
-          display: flex
-          justify-content: center
-          img
-            height: 100%
-            // TODO mq this
-            max-width: 352px
-        p
-          font-weight: 400
+  // Responsiveness for these parts
+  .text-image-layout
+    .wrapper
+      +mq(tabletLandscape)
+        display: flex
+        align-items: center
+      article
+        padding: 0 30px
+        +mq(tabletLandscape)
           text-align: left
-          // different because transform rotate messes it
-          margin-left: 200px
-          margin-right: 200px
+          max-width: 650px
+      figure
+        width: 100%
+        img
+          width: 100%
+          max-width: 577px
+    &.image-last
+      article
+        order: 1
+      figure
+        order: 2
+        +mq(tabletLandscape)
+          // For image
+          text-align: right
+    &.image-first
+      article
+        order: 2
+      figure
+        order: 1
+        +mq(tabletLandscape)
+          // For image
+          text-align: left
+    
 
-        .new-direction
-          img
-            margin-top: -100px
+  // .fuck-this-slanted-shit
+  //   width: 100%
+  //   overflow: hidden
+  //   &.wob
+  //     color: $white
+  //     .slanter
+  //       background-color: $black
+  //   >.slanter
+  //     margin: 0 -100px
+  //     margin-top: 200px
+  //     transform: rotate(-5deg)
+  //     transform-origin: left center
+  //     text-align: center
+  //     >.wrapper
+  //       transform: rotate(5deg)
+  //       >.sections
+  //         padding-bottom: 120px
+  //       figure, img
+  //         width: 100%
+  //         display: flex
+  //         justify-content: center
+  //         img
+  //           height: 100%
+  //           // TODO mq this
+  //           max-width: 352px
+  //       p
+  //         font-weight: 400
+  //         text-align: left
+  //         // different because transform rotate messes it
+  //         margin-left: 200px
+  //         margin-right: 200px
+  
+  .new-direction
+    margin-top: 200px
+    img
+      margin-top: -300px
+  .slanted-top
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      width: 0
+      height: 0
+      right: 0
+      border-top: 200px solid $white
+      border-right: 2800px solid $black
+      // 1337 h4x0r
+      transform: scale(1.001)
+    .wrapper
+      z-index: 2
+
+  .back-to-digital
+    padding-bottom: 140px
+  .slanted-bottom
+    position: relative
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0px
+      width: 0
+      height: 0
+      right: 0
+      border-bottom: 200px solid $white
+      border-right: 2800px solid $black
+      // 1337 h4x0r
+      transform: scale(1.001)
+    .wrapper
+      z-index: 2
 
   .cad-process
     .wrapper
-      margin-top: 32px
+      margin-top: 72px
     figure
       position: relative
       width: 70vw
