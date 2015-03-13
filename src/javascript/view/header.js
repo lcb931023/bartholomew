@@ -30,11 +30,11 @@ module.exports = Backbone.View.extend({
   // helper
   // get class with prefix 's'
   getSliderClass: function (){
-    console.log(this);
+    //console.log(this);
     var classes = this.$el.attr('class').split(' ');
     for (var i = 0; i < classes.length; i++) {
       var matches = /^s(.+)/.exec(classes[i]);
-      console.log(matches);
+      //console.log(matches);
       if (matches != null) {
         return matches[0];
         break;

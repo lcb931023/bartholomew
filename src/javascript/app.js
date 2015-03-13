@@ -8,13 +8,15 @@ var $ = require('jquery');
 var _ = require('underscore');
 var Backbone = require('backbone');
 var PagePiling  = require('pagepiling');
+var Handlebars  = require('hbsfy/runtime');
 
+Handlebars.registerPartial('footer', require("./template/partial/footer.hbs"));
 var HeaderView  = require('./view/header');
 var WorkView    = require('./view/work');
 
 // Instantiate event aggregator
 var EVI = _.extend({}, Backbone.Events);
-
+// Instantiate & Render Views
 var headerView = new HeaderView({
   el: '#header',
   EVI: EVI
