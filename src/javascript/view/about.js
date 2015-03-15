@@ -20,11 +20,13 @@ module.exports = Backbone.View.extend({
   transitIn: function() {
     this.$el.removeClass('out');
     this.isPresent = true;
+    this.EVI.trigger('openAbout');
   },
 
   transitOut: function() {
     // TODO possibly a callback to remove() this view?
     this.$el.addClass('out');
     this.isPresent = false;
+    this.EVI.trigger('closeAbout');
   }
 });
