@@ -58,12 +58,16 @@ module.exports = Backbone.View.extend({
    * Create detailView and transit to it
    */
   enterDetail: function (pType) {
+    console.log("[work]enterDetail");
+    if ( !this.detailView.isPresent ) {
+      console.log('HAA');
+      this.transitOut();
+    }
     this.detailView = DetailViewFactory.create({
       type: pType,
       el: '#detail',
       EVI: this.EVI
     });
-    this.transitOut();
     this.detailView.transitIn();
   },
 
@@ -74,6 +78,7 @@ module.exports = Backbone.View.extend({
     // if detailView doesn't exist, it'll be undefined
     // if it does exist but is out, it'll be false
     if ( this.detailView.isPresent ) {
+      console.log("[work]leaveDetail");
       this.detailView.transitOut();
       this.render();
       // TODO: Get detailView's slider index and go to that one
@@ -91,9 +96,11 @@ module.exports = Backbone.View.extend({
     }
     // remove after out
     function outCallback() {
+      console.log("**** work just chopped off his nuts");
       $(this).empty();
     }
-    this.$el.one('transitionend', outCallback);
+    var poop = _.once(outCallback);
+    this.$el.one('transitionend', poop);
   },
 
   transitIn: function () {

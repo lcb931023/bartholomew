@@ -27,11 +27,25 @@ var workView = new WorkView({
 });
 
 var CustomRouter = Backbone.Router.extend({
-
+  
   routes: {
     '': 'home',
     'work/:type': 'gotoDetail',
     '*else': 'goto404'
+  },
+  
+  // Router keeps track of prev pages
+  // http://stackoverflow.com/a/18736567/2241194
+  history: [],
+  initialize: function() {
+    this.listenTo(this, 'route', function (name, args) {
+      this.history.push({
+        name: name,
+        args: args,
+        fragment: Backbone.history.fragment
+      });
+      console.log(this.history);
+    });
   },
 
   /**
