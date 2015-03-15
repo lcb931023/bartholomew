@@ -11,10 +11,14 @@ module.exports = Backbone.View.extend({
     _.bindAll(this, 'changeWorkSlideHandler');
     _.bindAll(this, 'addAboutUnderline');
     _.bindAll(this, 'removeAboutUnderline');
+    _.bindAll(this, 'showStickyHeader');
+    _.bindAll(this, 'hideStickyHeader');
     // When you need to subscribe to some events
     this.EVI.bind('changeWorkSlide', this.changeWorkSlideHandler);
     this.EVI.bind('openAbout', this.addAboutUnderline);
     this.EVI.bind('closeAbout', this.removeAboutUnderline);
+    this.EVI.bind('showStickyHeader', this.showStickyHeader);
+    this.EVI.bind('hideStickyHeader', this.hideStickyHeader);
 
     return this.render();
   },
@@ -31,12 +35,16 @@ module.exports = Backbone.View.extend({
     this.$el.removeClass(lastSliderClass).addClass(nextSliderClass);
   },
   addAboutUnderline: function() {
-    console.log("addAboutUnderline");
     this.$el.addClass('about');
   },
   removeAboutUnderline: function() {
-    console.log('removeAboutUnderline');
     this.$el.removeClass('about');
+  },
+  showStickyHeader: function () {
+    this.$el.addClass('sticky');
+  },
+  hideStickyHeader: function () {
+    this.$el.removeClass('sticky');
   },
   // helper
   // get class with prefix 's'
