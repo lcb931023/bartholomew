@@ -58,44 +58,6 @@
         +mq(desktop)
           padding: 0 170px
 
-  .text-image-layout.taw
-    .wrapper
-      +mq(tabletLandscape)
-        align-items: initial
-      figure
-        margin-bottom: 64px
-        +mq(tabletLandscape)
-          text-align: left
-          max-width: 40%
-        img
-          max-width: 352px
-          +mq(tabletLandscape)
-            max-width: initial
-      article
-        +mq(tabletLandscape)
-          padding-left: 76px
-        +mq(desktop)
-          padding-left: 100px
-        h3
-          text-align: center
-          &:after
-            content: ''
-            display: block
-            overflow: hidden
-            margin: 20px auto
-            width: 28rem
-            +mq(desktop)
-              width: 37.6rem
-            height: 2px
-            background-color: $gold
-        p
-          text-align: left
-          line-height: 2.8rem
-          a, a:visited
-            color: #1ab1ab
-          a:hover
-            color: $gold
-
   .detail-coming-soon
     margin-top: 100px
     background-image: url("images/taw-opening.png")
@@ -106,3 +68,41 @@
     display: flex
     align-items: center
     justify-content: center
+    
+.text-image-layout.fancy
+  .wrapper
+    +mq(tabletLandscape)
+      align-items: initial
+    figure
+      margin-bottom: 64px
+      +mq(tabletLandscape)
+        text-align: left
+        max-width: 40%
+      img
+        max-width: 352px
+        +mq(tabletLandscape)
+          max-width: initial
+    article
+      +mq(tabletLandscape)
+        padding-left: 76px
+      +mq(desktop)
+        padding-left: 100px
+      h1, h3
+        text-align: center
+        &:after
+          content: ''
+          display: block
+          overflow: hidden
+          margin: 20px auto
+          width: 28rem
+          +mq(desktop)
+            width: 37.6rem
+          height: 2px
+          background-color: $gold
+      p
+        text-align: left
+        line-height: 2.8rem
+        a, a:visited
+          color: #1ab1ab
+        a:hover
+          color: $gold

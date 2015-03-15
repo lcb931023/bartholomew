@@ -13,6 +13,7 @@ var Handlebars  = require('hbsfy/runtime');
 Handlebars.registerPartial('footer', require("./template/partial/footer.hbs"));
 var HeaderView  = require('./view/header');
 var WorkView    = require('./view/work');
+var AboutView   = require('./view/about');
 
 // Instantiate event aggregator
 var EVI = _.extend({}, Backbone.Events);
@@ -25,11 +26,17 @@ var workView = new WorkView({
   el: '#work',
   EVI: EVI
 });
+var aboutView = new AboutView({
+  el: '#about',
+  EVI: EVI
+});
 
 var CustomRouter = Backbone.Router.extend({
   
   routes: {
     '': 'home',
+    'work': 'home',
+    'about': 'about',
     'work/:type': 'gotoDetail',
     '*else': 'goto404'
   },
@@ -52,15 +59,35 @@ var CustomRouter = Backbone.Router.extend({
    * Root URL route handler
    */
   home: function () {
-    // TODO: Goes back to work view
-    workView.leaveDetail();
+    if (this.history.length > 0) {
+      if ( this.history[ this.history.length - 1 ].fragment === "about")
+      {
+        // exit about to last page
+        aboutView.transitOut();
+        // update url to last page
+        if (this.history.length > 1) {
+          console.log(this.history[ this.history.length - 2 ].fragment);
+          this.navigate( this.history[ this.history.length - 2 ].fragment );
+        }
+      } else {
+        workView.leaveDetail();
+      }
+    }
   },
 
+  /**
+   * Brings down about page
+   */
+  about: function () {
+    aboutView.transitIn();
+  },
+    
   /**
    * Load and transit to detail pages
    */
   gotoDetail: function (type) {
     console.log('gotoDetail ' + type);
+    aboutView.transitOut();
     workView.enterDetail(type);
   },
 
