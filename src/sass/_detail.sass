@@ -42,7 +42,10 @@
           max-width: 568px
 
   .objective-banner
-    background: url("images/goggles-objective-bg.png")
+    background-image: url("images/goggles-objective-bg.png")
+    background-size: cover
+    background-position: 50% 0%
+    background-repeat: no-repeat
     height: 180px
     padding: 0 50px
     display: flex
@@ -77,7 +80,14 @@
         z-index: 2
       iframe
         z-index: 1
-
+        
+  .video-embed
+    background: $white
+    display: flex
+    justify-content: center
+    padding-top: 48px
+    padding-bottom: 48px
+    
   // spacing from http://jsfiddle.net/danield770/9hh86/
   .process-banner
     background: $black

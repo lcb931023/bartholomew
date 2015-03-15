@@ -26,7 +26,7 @@ module.exports = DetailView.extend({
   initialize: function(options) {
     // werk
     DetailView.prototype.initialize.apply(this, arguments);
-    // Manual binding of scroller D: pass in this as context
+    // HACK: Manual binding of scroller D: pass in this as context
     this.$('.scroller-content').scroll( $.proxy(this.scrollHandler, this) );
   },
   
