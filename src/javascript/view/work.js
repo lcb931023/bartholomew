@@ -58,9 +58,7 @@ module.exports = Backbone.View.extend({
    * Create detailView and transit to it
    */
   enterDetail: function (pType) {
-    console.log("[work]enterDetail");
     if ( !this.detailView.isPresent ) {
-      console.log('HAA');
       this.transitOut();
     }
     this.detailView = DetailViewFactory.create({
@@ -78,7 +76,6 @@ module.exports = Backbone.View.extend({
     // if detailView doesn't exist, it'll be undefined
     // if it does exist but is out, it'll be false
     if ( this.detailView.isPresent ) {
-      console.log("[work]leaveDetail");
       this.detailView.transitOut();
       this.render();
       // TODO: Get detailView's slider index and go to that one
@@ -88,7 +85,6 @@ module.exports = Backbone.View.extend({
   },
 
   transitOut: function() {
-    console.log('Work Out');
     // also transit out pagepiling's Tooltip
     this.$el.addClass('out');
     if ( this.$('#pagepiling').pagepiling ) {
@@ -96,7 +92,6 @@ module.exports = Backbone.View.extend({
     }
     // remove after out
     function outCallback() {
-      console.log("**** work just chopped off his nuts");
       $(this).empty();
     }
     var poop = _.once(outCallback);
@@ -104,7 +99,6 @@ module.exports = Backbone.View.extend({
   },
 
   transitIn: function () {
-    console.log('Walk In');
     this.$el.removeClass('out');
     if ( this.$('#pagepiling').pagepiling ) {
       $('#pp-nav').removeClass('out');

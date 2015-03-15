@@ -51,7 +51,6 @@ var CustomRouter = Backbone.Router.extend({
         args: args,
         fragment: Backbone.history.fragment
       });
-      console.log(this.history);
     });
   },
 
@@ -66,7 +65,6 @@ var CustomRouter = Backbone.Router.extend({
         aboutView.transitOut();
         // update url to last page
         if (this.history.length > 1) {
-          console.log(this.history[ this.history.length - 2 ].fragment);
           this.navigate( this.history[ this.history.length - 2 ].fragment );
         }
       } else {
@@ -86,7 +84,6 @@ var CustomRouter = Backbone.Router.extend({
    * Load and transit to detail pages
    */
   gotoDetail: function (type) {
-    console.log('gotoDetail ' + type);
     aboutView.transitOut();
     workView.enterDetail(type);
   },
