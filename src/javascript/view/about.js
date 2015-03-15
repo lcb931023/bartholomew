@@ -21,6 +21,7 @@ module.exports = Backbone.View.extend({
   
   transitIn: function() {
     this.$el.removeClass('out');
+    this.$el.scrollTop(0);
     this.isPresent = true;
     this.EVI.trigger('openAbout');
   },
