@@ -1,0 +1,23 @@
+.button
+  box-sizing: border-box
+  +hardware-acceleration
+  text-align: center
+  span
+    color: $gold
+    font-size: 2.3rem
+    vertical-align: middle
+  padding: 2px 21px
+  &.no-animation
+    padding: 10px 20px
+    pointer-events: none
+  display: inline-block
+  // Fix cut-off
+  border: 1px solid $light-grey
+  text-transform: uppercase
+  letter-spacing: 0.1em
+  color: $light-grey
+  overflow: hidden
+  transition: background-color 0.3s ease
+  &:hover
+    background-color: $grey
+    color: $white !important

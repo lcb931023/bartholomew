@@ -71,7 +71,8 @@
     +mq(tabletLandscape)
       height: auto
       width: auto
-      max-width: 40%
+      max-width: 35%
+      top: 30%
 
 .section.s3
   background-color: #f5f5f5
@@ -86,6 +87,10 @@
 
 .section.s4
   background-color: #f0f0f0
+  img.work-splash
+    +mq(tabletLandscape)
+      top: 30%
+      min-height: 350px
 
 
 /* Last Section: Thumbnail Navigation */
@@ -118,9 +123,12 @@
             width: 25%
           +mq(desktop)
             width: 20%
+          &:hover
+            img
+              opacity: 0.8
           .featured
             position: relative
-            &:before
+            &:after
               display: block
               width: 100%
               content: ''
@@ -130,13 +138,16 @@
               border-top: 4px solid $gold
           img
             width: 100%
+            //+hardware-acceleration
             height: auto
+            opacity: 1
+            transition: opacity 0.3s ease
           figcaption
             text-transform: uppercase
             font-size: 1.6rem
             letter-spacing: .1em
           // $!çk ñå$†¥ płåçèhøłdè®
-          .noshow-wrapper
+          .text-overlay
             background-color: $grey
             display: flex
             position: relative
@@ -149,9 +160,7 @@
               transform: translate(-50%, -50%)
               top: 50%
               left: 50%
-              color: #f0f0f0
+              color: $dark-grey
               font-size: 1.6rem
-            img
-              visibility: hidden
 
 // [TODO] media query, e.g. for thumbnails-group

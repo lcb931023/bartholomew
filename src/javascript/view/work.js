@@ -33,7 +33,7 @@ module.exports = Backbone.View.extend({
         'textColor': '#000',
         'bulletsColor': '#000',
         'position': 'right',
-        'tooltips': arrTooltip
+        'tooltips': []
       },
       onLeave: this.changeWorkSlide
     });
