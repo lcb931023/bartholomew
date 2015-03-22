@@ -27,7 +27,7 @@ module.exports = DetailView.extend({
     // werk
     DetailView.prototype.initialize.apply(this, arguments);
     // HACK: Manual binding of scroller D: pass in this as context
-    this.$('.scroller-content').scroll( $.proxy(this.scrollHandler, this) );
+    this.$('.scroller-content').scroll( $.proxy(this.scrollerScrollHandler, this) );
   },
   
   // Click-switch module
@@ -37,7 +37,7 @@ module.exports = DetailView.extend({
   },
   // Scroll-change module
   
-  scrollHandler: function(e) {
+  scrollerScrollHandler: function(e) {
     var curScrollPos = $(e.currentTarget).scrollTop();
     var imgH = $(e.currentTarget).height();
     // if scrolling down, 
