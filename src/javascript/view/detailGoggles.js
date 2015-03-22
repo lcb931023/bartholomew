@@ -20,7 +20,7 @@ module.exports = DetailView.extend({
     "Learning to model this part was an exploration into the capacity of the surfacing features in SolidWorks. I started with what I knew and oriented my scan with my print. From here I started to build the surfaces.",
     "Through trial and error I learned how to optimize the surfaces. I referenced my physical model to map out and visualize where these functions would start and end.",
     "I cost myself a lot of time and jeapordized the integrity of the final model by not thinking through every detail before going to CAD. This was one of the most valuable lessons I learned from this project and I now understand what it means to really think through a design.",
-    "After converting the goggle’s body into a solid, I modeled all of the details to make it realistic. I then assembled the straps, screws, lens, and foam components and headed to KeyShot to render."
+    "After converting the goggle’s body into a solid, I modeled all of the details to make it realistic. I then assembled the straps, screws, lens, and foam components and rendered in KeyShot."
   ],
   
   initialize: function(options) {
