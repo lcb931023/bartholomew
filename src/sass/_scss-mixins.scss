@@ -4,6 +4,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
+// Force hardware acceleration
+@mixin hardware-acceleration {
+  transform: translateZ(0px);
+}
+
 // media queries
 @mixin mq($breakpoint)
 {
