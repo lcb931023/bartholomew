@@ -61,11 +61,11 @@
       text-align: center
       color: $light-grey
 
-  .github-model
+  .model-viewer
     background: $white
     display: flex
     height: 100%
-    min-height: 500px
+    max-height: 700px
     align-items: center
     justify-content: center
     .wrapper
@@ -177,7 +177,7 @@
           +mq(tabletLandscape)
             width: 50%
           +mq(desktop)
-            width: 35%
+            width: 30%
 
   .functional
     display: flex
@@ -201,6 +201,8 @@
       +mq(tabletLandscape)
         margin: 0 80px
       +mq(desktop)
+        padding: 0 128px
+        box-sizing: border-box
         margin: 0 128px
       article
         position: absolute
@@ -250,6 +252,8 @@
       +mq(desktop)
         margin-left: 128px
         margin-right: 128px
+        box-sizing: border-box
+        padding: 0 128px
       text-align: center
 
   // Responsiveness for these parts
